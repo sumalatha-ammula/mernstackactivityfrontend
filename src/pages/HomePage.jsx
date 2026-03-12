@@ -1,5 +1,7 @@
 import {useEffect,useState} from "react";
-import axios from 'axios'
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 
 
 const HomePage = () => {
@@ -11,6 +13,7 @@ const [page,setPage] = useState(1)
 const [pages,setPages] = useState(1)
 const [search, setSearch] = useState("");
 const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     name: "",
@@ -86,7 +89,7 @@ console.log("data",res.data)
   };
   const handleLogout = () => {
   localStorage.removeItem("token");
-  window.location.href = "/login";
+   navigate("/login");
 };
   const deleteContact = async (id) => {
   try {
