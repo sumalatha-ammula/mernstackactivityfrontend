@@ -29,7 +29,7 @@ return;
 try{
 
 const res = await axios.post(
-"https://mernstackactivitybackend.onrender.com//api/notes/signin",
+"https://mernstackactivitybackend.onrender.com/api/notes/signin",
 form
 )
 
