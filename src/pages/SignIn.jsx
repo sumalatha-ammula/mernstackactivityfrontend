@@ -38,7 +38,7 @@ localStorage.setItem("token",res.data.token)
 alert("Login successful")
 
 
-navigate("/")
+navigate("/Home")
 
 }catch(err){
 
