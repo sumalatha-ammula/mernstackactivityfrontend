@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes,Route,HashRouter } from 'react-router-dom'
+import { Routes,Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import SignUp from './pages/SignUp'
 import Signin from './pages/SignIn'
@@ -9,7 +9,6 @@ import NoteDetail from './pages/NoteDetail'
 const App = () => {
   return (
     <div data-theme="forest">  
-    <HashRouter> 
       <Routes>
         <Route path="/" element={<SignUp/>}/>
         <Route path="/login" element={<Signin/>}/>
@@ -17,7 +16,7 @@ const App = () => {
         <Route path="/createpage" element={<CreatePage/>}/>
         <Route path="/notedatail" element={<NoteDetail/>}/>
       </Routes>
-      </HashRouter> 
+    
 
 
 
