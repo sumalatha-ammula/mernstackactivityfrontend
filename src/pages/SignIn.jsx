@@ -91,7 +91,7 @@ Login
 Don't have an account?{" "}
 <span
 className="text-blue-500 cursor-pointer"
-onClick={()=>navigate("/Home")}
+onClick={()=>navigate("/")}
 >
 Register
 </span>
