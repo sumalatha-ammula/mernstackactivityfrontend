@@ -29,7 +29,7 @@ return;
 try{
 
 const res = await axios.post(
-"http://localhost:5001/api/notes/signin",
+"https://mernstackactivitybackend.onrender.com//api/notes/signin",
 form
 )
 
@@ -91,7 +91,7 @@ Login
 Don't have an account?{" "}
 <span
 className="text-blue-500 cursor-pointer"
-onClick={()=>navigate("/signup")}
+onClick={()=>navigate("/Home")}
 >
 Register
 </span>
