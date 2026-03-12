@@ -22,7 +22,7 @@ const token = localStorage.getItem("token");
   });
     const fetchNotes = async(pageNumber = 1)=>{
 try {
-  const res = await axios.get(`https://mernstackactivitybackend.onrender.com//api/notes?page=${pageNumber}&limit=5`,{
+  const res = await axios.get(`https://mernstackactivitybackend.onrender.com/api/notes?page=${pageNumber}&limit=5`,{
     headers: {
     Authorization: `Bearer ${token}`
   }
@@ -54,7 +54,7 @@ console.log("data",res.data)
     if (editingId) {
 
       await axios.put(
-        `https://mernstackactivitybackend.onrender.com//api/notes/${editingId}`,
+        `https://mernstackactivitybackend.onrender.com/api/notes/${editingId}`,
         form,{
           headers: {
     Authorization: `Bearer ${token}`
@@ -64,7 +64,7 @@ console.log("data",res.data)
 
     } else {
 
-     await fetch("https://mernstackactivitybackend.onrender.com//api/notes/addContact", {
+     await fetch("https://mernstackactivitybackend.onrender.com/api/notes/addContact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
