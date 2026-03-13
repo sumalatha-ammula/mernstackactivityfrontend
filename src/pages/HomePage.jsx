@@ -1,4 +1,4 @@
-import {useEffect,useState} from "react";
+import {useEffect,useState,useRef} from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
@@ -6,14 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
 const [contacts, setContacts] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [editingId, setEditingId] = useState(null);
-  const [errors, setErrors] = useState({});
+const [showModal, setShowModal] = useState(false);
+const [editingId, setEditingId] = useState(null);
+const [errors, setErrors] = useState({});
 const [page,setPage] = useState(1)
 const [pages,setPages] = useState(1)
 const [search, setSearch] = useState("");
 const token = localStorage.getItem("token");
-  const navigate = useNavigate();
+const navigate = useNavigate();
+const modalRef = useRef(null);
+
 
   const [form, setForm] = useState({
     name: "",
