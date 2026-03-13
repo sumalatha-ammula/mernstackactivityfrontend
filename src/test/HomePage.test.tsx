@@ -37,21 +37,21 @@ describe("HomePage Component", () => {
     Storage.prototype.getItem = jest.fn(() => "mockToken");
   });
 
-  // 1️⃣ Heading render
+  
   test("renders Contacts heading", async () => {
     render(<HomePage />);
 
     expect(await screen.findByText("Contacts")).toBeInTheDocument();
   });
 
-  // 2️⃣ Add Contact button
+ 
   test("renders Add Contact button", async () => {
     render(<HomePage />);
 
     expect(await screen.findByText("+ Add Contact")).toBeInTheDocument();
   });
 
-  // 3️⃣ Search input
+  
   test("renders search input", async () => {
     render(<HomePage />);
 
@@ -60,7 +60,7 @@ describe("HomePage Component", () => {
     ).toBeInTheDocument();
   });
 
-  // 4️⃣ Contact data appears
+
   test("displays contact data in table", async () => {
     render(<HomePage />);
 
@@ -68,7 +68,7 @@ describe("HomePage Component", () => {
     expect(screen.getByText("john@test.com")).toBeInTheDocument();
   });
 
-  // 5️⃣ Modal opens when Add Contact clicked
+ 
   test("opens Add Contact modal", async () => {
     render(<HomePage />);
 
@@ -77,7 +77,7 @@ describe("HomePage Component", () => {
     expect(screen.getByText("Add Contact")).toBeInTheDocument();
   });
 
-  // 6️⃣ Form validation for name
+
   test("shows name validation error", async () => {
     render(<HomePage />);
 
@@ -88,7 +88,7 @@ describe("HomePage Component", () => {
     expect(await screen.findByText("Name is required")).toBeInTheDocument();
   });
 
-  // 7️⃣ Email validation
+  
   test("shows email validation error", async () => {
     render(<HomePage />);
 
@@ -103,7 +103,7 @@ describe("HomePage Component", () => {
     expect(await screen.findByText("Email is required")).toBeInTheDocument();
   });
 
-  // 8️⃣ Search filter
+  
   test("filters contacts by name", async () => {
     render(<HomePage />);
 
@@ -116,7 +116,7 @@ describe("HomePage Component", () => {
     expect(await screen.findByText("John Doe")).toBeInTheDocument();
   });
 
-  // 9️⃣ Logout button exists
+ 
   test("renders logout button", async () => {
     render(<HomePage />);
 
@@ -124,3 +124,4 @@ describe("HomePage Component", () => {
   });
 
 });
+
