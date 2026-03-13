@@ -43,14 +43,25 @@ console.log("data",res.data)
   },[page])
   useEffect(() => {
   const token = localStorage.getItem("token");
-
   if (!token) {
     navigate("/login");
   }
 }, []);
+  useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      setShowModal(false);
+    }
+  };
+  if (showModal) {
+    document.addEventListener("mousedown", handleClickOutside);
+  }
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [showModal]);
   const handleSubmit = async (e) => {
     e.preventDefault();
-
   if (!validateForm()) return;
   try {
 
@@ -295,7 +306,7 @@ Edit
 
 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40">
 
-<div className="bg-white p-6 rounded w-96">
+<div className="bg-white p-6 rounded w-96" ref={modalRef}>
 
 <h2 className="text-xl mb-4">
 {editingId ? "Edit Contact" : "Add Contact"}
@@ -339,7 +350,7 @@ className="border p-2 w-full"
 placeholder="Company"
 />
 {errors.company && (
-<p className="text-red-500 text-sm">{errors.compnay}</p>
+<p className="text-red-500 text-sm">{errors.company}</p>
 )}
 
 {/* STATUS SELECT */}
