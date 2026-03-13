@@ -34,16 +34,9 @@ const res = await axios.post(
 "https://mernstackactivitybackend.onrender.com/api/notes/signup",
 form
 );
-
-console.log("signup success",res.data);
-
-alert("Account created successfully");
  navigate("/login");
-
 }catch(err){
-
 setError(err.response?.data?.message || "Signup failed");
-
 }
 
 };
