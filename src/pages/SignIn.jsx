@@ -35,15 +35,9 @@ form
 
 console.log("login response",res.data)
 localStorage.setItem("token",res.data.token)
-alert("Login successful")
-
-
 navigate("/Home")
-
 }catch(err){
-
 setError("Invalid email or password")
-
 }
 
 }
